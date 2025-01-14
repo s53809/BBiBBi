@@ -493,7 +493,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd09217bbe64b014f8a881ecb9072480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _arrowPooler: {fileID: 0}
+  _arrowPooler: {fileID: 462201622}
+  _arrowUpSprite: {fileID: 6056778389236138856, guid: 5ede39431fe87cc4481eb12574fefb62, type: 3}
+  _arrowDownSprite: {fileID: 4668288130315382008, guid: f24379f8aefa82c4e86af9af49ceb1ab, type: 3}
+  _arrowLeftSprite: {fileID: -6202666185451797319, guid: 7fa844df566a6c8478fd2f06ef308128, type: 3}
+  _arrowRightSprite: {fileID: 7749556995256740854, guid: 449c5cacaf49ed542a5d1106678801cc, type: 3}
+  _arrowRow: 6
+  _arrowColumn: 19
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,9 @@ namespace ForTeacherBBiBBi
         [SerializeField] private Sprite _arrowDownSprite;
         [SerializeField] private Sprite _arrowLeftSprite;
         [SerializeField] private Sprite _arrowRightSprite;
+
+        [SerializeField] private Int32 _arrowRow;
+        [SerializeField] private Int32 _arrowColumn;
         private void Awake()
         {
             _magicalWand = new CommanderForTeacher();
@@ -22,7 +25,7 @@ namespace ForTeacherBBiBBi
         }
         public void GameStart() 
         {
-            StartOrderLogic(10);
+            StartOrderLogic(14);
         }
 
         public void StartOrderLogic(Int32 howManyOrder)
@@ -49,6 +52,7 @@ namespace ForTeacherBBiBBi
 
         private void ShowArrow()
         {
+            Int32 index = 0;
             foreach(var command in _curCommands)
             {
                 GameObject obj = _arrowPooler.SpawnObject("BlackBoard_Arrow");
@@ -59,7 +63,12 @@ namespace ForTeacherBBiBBi
                 if (command == CommandEnum.Right) sr.sprite = _arrowRightSprite;
                 if (command == CommandEnum.Left) sr.sprite = _arrowLeftSprite;
 
+                obj.transform.localPosition = new Vector3(
+                    -0.9f + (0.1f * (index % _arrowColumn)), 
+                    0.26f - (0.1f * (index / _arrowColumn)), 
+                    0);
 
+                index++;
             }
         }
     }
