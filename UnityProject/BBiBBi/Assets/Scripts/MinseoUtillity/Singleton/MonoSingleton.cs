@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Android;
 
 public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
         {
             if(m_instance == null)
             {
-                m_instance = (T)FindObjectOfType(typeof(T));
+                m_instance = Object.FindFirstObjectByType<T>();
                 if(m_instance == null)
                 {
                     var obj = new GameObject();
@@ -24,7 +25,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 
     protected virtual void Awake()
     {
-        if (m_instance != null) Destroy(gameObject);
+        if (m_instance != null && m_instance != this) Destroy(gameObject);
         else DontDestroyOnLoad(gameObject);
     }
 }

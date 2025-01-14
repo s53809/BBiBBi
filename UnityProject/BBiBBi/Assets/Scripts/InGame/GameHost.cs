@@ -6,7 +6,6 @@ public class GameHost : MonoSingleton<GameHost>
     public delegate void EventHandler();
     public delegate void EnterStageHandler(Int32 stageNum);
 
-    [SerializeField] private Int32 _numberOfStage = 0; //임시 SerializeField
     private Int32 _stageNum = 0;
 
     //게임 흐름 제어용 이벤트
@@ -26,6 +25,7 @@ public class GameHost : MonoSingleton<GameHost>
     public void Start()
     {
         First_GameStart?.Invoke();
+        GoToStage(3);
     }
 
     public void GoToStage(Int32 curStage)
