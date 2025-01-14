@@ -34,9 +34,7 @@ namespace ForTeacherBBiBBi
             _curCommands = _magicalWand.GetTheFinalCommandInstruction();
             ShowArrow();
 
-            /* #todo list
-            1. must be displayed as UI
-            
+            /* #todo list          
             2. must be displayed to the song
             3. so you have to choose the right music on your own
 
